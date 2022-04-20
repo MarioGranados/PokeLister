@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TestPage</title>
+</head>
+<body>
+<div><p>Login</p></div>
+<form action="/login" method="post">
+    <label for="username"></label>
+    <input type="text" id="username" name="username" placeholder="username">
+    <label for="password"></label>
+    <input type="password" id="password" name="password" placeholder="password">
+    <input type="submit" value="login">
+    <span th:text="${loginError}"></span>
+</form>
+
+<div><p>Register</p></div>
+<form action="/register" method="post">
+    <label for="user"></label>
+    <input type="text" name="user" id="user" placeholder="username">
+    <label for="email"></label>
+    <input type="email" name="email" id="email" placeholder="email">
+    <label for="pass"></label>
+    <input type="password" name="pass" id="pass" placeholder="password">
+    <label for="confirm"></label>
+
+    <input type="password" name="confirm" id="confirm" placeholder="confirm password">
+    <input type="submit" value="register">
+    <span th:text="${error}"></span>
+    <span></span>
+</form>
+
+<div><p>Search</p></div>
+<form action="/search" method="post">
+    <label for="search"></label>
+    <input type="search" name="search" id="search" placeholder="search for">
+    <input type="submit" value="register">
+</form>
+
+<div><p>Delete</p></div>
+<form action="/delete" method="post">
+    <input type="submit" value="delete">
+</form>
+
+<div><p>Post Ad</p></div>
+<form action="/post" method="post">
+    <label for="title"></label>
+    <input type="text" id="title" name="title" placeholder="title">
+    <label for="description"></label>
+    <input type="text" id="description" name="description" placeholder="description">
+    <input type="submit" value="post">
+</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:replace="partials/head :: head">
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<nav th:replace="navbar :: navbar"></nav>
+<div class="container">
+    <form action="/login" method="post">
+        <div class="text-danger text-center" th:text="${loginError}"></div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" aria-describedby="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+</div>
+
+<footer th:replace="footer :: footer"></footer>
+<section th:replace="partials/script_lib :: script_lib"></section>
+</body>
+</html>
