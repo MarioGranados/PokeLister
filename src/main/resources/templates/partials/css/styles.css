@@ -1,0 +1,12 @@
+:root {
+    --primary : black;
+    --secondary : white;
+    --links : blue;
+    --buttons : black;
+}
+
+.bg_still_image {
+    background-image: url("https://www.fillmurray.com/640/360");
+    width: 100%;
+    background-attachment: fixed;
+}

@@ -7,12 +7,23 @@
     <title>Products</title>
 </head>
 <body>
-
+<div class="card-group" th:fragment="cards">
 <div th:each="product : ${products}">
-    <p th:text="${product.name}"></p>
-    <p th:text="${product.description}"></p>
-    <p th:text="${product.price}"></p>
-    <p th:text="${product.quantity}"></p>
+    <div class="card">
+        <div class="card-body">
+            <img src="https://picsum.photos/200/300" class="card-img-top" alt="...">
+            <div class="card-title">
+                <div th:text="${product.name}">name</div>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p th:text="${product.description}">desc</p>
+            <p th:text="${product.price}">price</p>
+            <p th:text="${product.quantity}">quantity</p>
+        </div>
+
+    </div>
+
+</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
