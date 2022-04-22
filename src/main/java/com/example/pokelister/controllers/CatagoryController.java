@@ -12,7 +12,7 @@ public class CatagoryController {
 
     private CatagoryRepository catagoryDao;
 
-    public CatagoryController(ProductRepository categoryDao) {
+    public CatagoryController(CatagoryRepository cartController) {
         this.catagoryDao = catagoryDao;
     }
 

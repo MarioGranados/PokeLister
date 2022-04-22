@@ -12,14 +12,16 @@ public class Cart {
     @Column
     private long user_id;
 
-    @Column
-    private long product_id;
+    @OneToOne
+    private Product product;
+
+    @OneToOne
+    private CustomerInfo customerInfo;
 
     public Cart(){}
 
     public Cart(long user_id, long product_id) {
         this.user_id = user_id;
-        this.product_id = product_id;
     }
 
 
@@ -37,13 +39,5 @@ public class Cart {
 
     public void setUser_id(long user_id) {
         this.user_id = user_id;
-    }
-
-    public long getProduct_id() {
-        return product_id;
-    }
-
-    public void setProduct_id(long product_id) {
-        this.product_id = product_id;
     }
 }
