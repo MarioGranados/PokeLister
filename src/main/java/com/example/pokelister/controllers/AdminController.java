@@ -31,14 +31,16 @@ public class AdminController {
                                 @RequestParam (name = "description") String desc,
                                 @RequestParam(name = "price") long price,
                                 @RequestParam(name = "quantity") long quantity,
+                                @RequestParam(name = "image") String image,
                                 Model model) {
 
         model.addAttribute(title);
         model.addAttribute(desc);
         model.addAttribute(price);
         model.addAttribute(quantity);
+        model.addAttribute(image);
 
-        productDao.save(new Product(title, desc, price, quantity));
+        productDao.save(new Product(title, desc, price, quantity, image));
         return "create";
     }
 /*

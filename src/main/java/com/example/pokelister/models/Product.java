@@ -21,14 +21,18 @@ public class Product {
     @Column(nullable = false)
     private long quantity;
 
+    @Column(nullable = true)
+    private String image;
+
     public Product(){
     }
 
-    public Product(String name, String description, long price, long quantity){
+    public Product(String name, String description, long price, long quantity, String image){
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
+        this.image = image;
     }
 
     public long getId() {
@@ -69,5 +73,13 @@ public class Product {
 
     public void setQuantity(long quantity) {
         this.quantity = quantity;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
