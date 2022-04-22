@@ -1,5 +1,4 @@
 package com.example.pokelister.controllers;
-
 import com.example.pokelister.models.User;
 import com.example.pokelister.repositories.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,7 +16,6 @@ public class LoginController {
 
     @GetMapping("/login")
     public String getLogin() {
-        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return "login";
     }
 

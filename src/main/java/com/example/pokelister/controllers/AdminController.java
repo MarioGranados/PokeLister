@@ -29,10 +29,16 @@ public class AdminController {
     @PostMapping("/create")
     public String createProduct(@RequestParam(name = "title") String title,
                                 @RequestParam (name = "description") String desc,
+                                @RequestParam(name = "price") long price,
+                                @RequestParam(name = "quantity") long quantity,
                                 Model model) {
+
         model.addAttribute(title);
         model.addAttribute(desc);
-        productDao.save(new Product("title", "desc", 2L, 4));
+        model.addAttribute(price);
+        model.addAttribute(quantity);
+
+        productDao.save(new Product(title, desc, price, quantity));
         return "create";
     }
 /*
