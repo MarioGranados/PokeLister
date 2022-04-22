@@ -8,8 +8,15 @@
 <body>
 <nav th:replace="navbar :: navbar"></nav>
 <div class="container">
-    <form action="/login" method="post">
-        <div class="text-danger text-center" th:text="${loginError}"></div>
+    <h1>Log In</h1>
+    <div th:if="${param.error}">
+        Invalid Username and Password.
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
+
+    <form th:action="@{/login}" method="post">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" name="username" aria-describedby="username">

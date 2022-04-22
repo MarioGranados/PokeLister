@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link th:replace="partials/head :: head">
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
     <title>Create Add</title>
 </head>
@@ -18,5 +19,6 @@
 </form>
 
 
+<section th:replace="partials/script_lib :: script_lib"></section>
 </body>
 </html>

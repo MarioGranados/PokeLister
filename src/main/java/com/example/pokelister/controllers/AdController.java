@@ -1,7 +1,5 @@
 package com.example.pokelister.controllers;
-
-import com.example.pokelister.models.Ad;
-import com.example.pokelister.repositories.AdRepository;
+import com.example.pokelister.repositories.ProductRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AdController {
 
-    private final AdRepository adDao;
+    private final ProductRepository adDao;
 
-    public AdController(AdRepository adDao) {
+    public AdController(ProductRepository adDao) {
         this.adDao = adDao;
     }
 
@@ -30,7 +28,6 @@ public class AdController {
         model.addAttribute(title);
         model.addAttribute(desc);
 
-        adDao.save(new Ad(title, desc));
         return "/ads";
     }
 }
