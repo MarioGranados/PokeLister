@@ -1,32 +1,53 @@
 package com.example.pokelister.controllers;
 
-import org.springframework.security.core.parameters.P;
+import com.example.pokelister.models.Product;
+import com.example.pokelister.repositories.ProductRepository;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+@Controller
 public class AdminController {
-    @GetMapping
+
+    private ProductRepository productDao;
+    public AdminController(ProductRepository productDao) {
+        this.productDao = productDao;
+    }
+
+/*    @GetMapping("/admin")
     public String showAdminPage() {
         return "admin";
+    }*/
+
+    @GetMapping("/create")
+    public String showCreateProduct(){
+        return "create";
     }
 
-    @PostMapping("/products/create")
-    public String createProduct() {
-        return "admin";
+    @PostMapping("/create")
+    public String createProduct(@RequestParam(name = "title") String title,
+                                @RequestParam (name = "description") String desc,
+                                Model model) {
+        model.addAttribute(title);
+        model.addAttribute(desc);
+        productDao.save(new Product("title", "desc", 2L, 4));
+        return "create";
     }
-
-    @PostMapping("/products/delete")
+/*
+    @PostMapping("admin/products/delete")
     public String deleteProduct() {
         return "admin";
     }
 
-    @PostMapping("/products/pricing")
+    @PostMapping("admin/products/pricing")
     public String editPricing() {
         return "admin";
     }
 
-    @PostMapping("/make/admin")
+    @PostMapping("admin/create/admin")
     public String postAdmin() {
         return "admin";
-    }
+    }*/
 }

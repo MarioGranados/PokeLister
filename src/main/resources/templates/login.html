@@ -6,7 +6,7 @@
     <title>Login</title>
 </head>
 <body>
-<nav th:replace="navbar :: navbar"></nav>
+<nav th:replace="partials/navbar :: navbar"></nav>
 <div class="container">
     <h1>Log In</h1>
     <div th:if="${param.error}">
@@ -29,7 +29,7 @@
     </form>
 </div>
 
-<footer th:replace="footer :: footer"></footer>
+<footer th:replace="partials/footer :: footer"></footer>
 <section th:replace="partials/script_lib :: script_lib"></section>
 </body>
 </html>
