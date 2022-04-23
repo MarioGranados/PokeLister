@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 
 import javax.persistence.*;
 
-@Controller
+@Entity
 @Table(name = "catagories")
 public class Catagory {
     @Id

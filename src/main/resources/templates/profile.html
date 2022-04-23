@@ -9,8 +9,21 @@
 <nav th:replace="partials/navbar :: navbar"></nav>
 
 <div class="container">
+
     <h2>Welcome <span th:text="${user.getUsername()}"></span></h2>
 </div>
+
+<!--promos banner here-->
+
+<div class="container">
+    <div th:include="hero :: hero"></div>
+</div>
+
+<!--products-->
+<div class="container">
+    <div th:include="products :: cards"></div>
+</div>
+
 
 
 <footer th:replace="partials/footer :: footer"></footer>
