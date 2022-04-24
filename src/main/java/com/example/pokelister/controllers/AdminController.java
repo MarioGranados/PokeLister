@@ -18,6 +18,7 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String showAdminPage(Model model) {
+        model.addAttribute("admin", true);
         model.addAttribute("products", productDao.findAll());
         return "admin";
     }
@@ -45,7 +46,8 @@ public class AdminController {
         return "admin";
     }
     @PostMapping("/admin/delete")
-    public String deleteProduct(@RequestParam long id) {
+    public String deleteProduct(@RequestParam (name = "product_id") long id) {
+        System.out.println(id);
         productDao.deleteById(id);
         return "admin";
     }
