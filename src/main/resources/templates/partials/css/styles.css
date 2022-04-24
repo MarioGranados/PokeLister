@@ -1,12 +1,30 @@
 :root {
-    --primary : black;
-    --secondary : white;
-    --links : blue;
-    --buttons : black;
+    --secondary : #E63946;
+    --primary : #FFF8F0;
+    --buttons: #183059;
+    --links : #52B2CF;
 }
 
 .bg_still_image {
     background-image: url("https://www.fillmurray.com/640/360");
     width: 100%;
     background-attachment: fixed;
+}
+
+.nav_logo {
+    width: 50px;
+    height: 50px;
+}
+
+.primary_bg {
+    background-color: var(--primary);
+}
+.secondary_bg {
+    background-color: var(--secondary);
+}
+.btn_bg {
+    background-color: var(--buttons);
+}
+.text_color_emphasis {
+    color: var(--links);
 }

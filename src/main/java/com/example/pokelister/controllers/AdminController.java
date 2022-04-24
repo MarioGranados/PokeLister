@@ -16,17 +16,17 @@ public class AdminController {
         this.productDao = productDao;
     }
 
-/*    @GetMapping("/admin")
+    @GetMapping("/admin")
     public String showAdminPage() {
+        return "admin";
+    }
+
+/*    @GetMapping("/admin/create")
+    public String showCreateProduct(){
         return "admin";
     }*/
 
-    @GetMapping("/create")
-    public String showCreateProduct(){
-        return "create";
-    }
-
-    @PostMapping("/create")
+    @PostMapping("/admin/create")
     public String createProduct(@RequestParam(name = "title") String title,
                                 @RequestParam (name = "description") String desc,
                                 @RequestParam(name = "price") long price,
@@ -41,21 +41,25 @@ public class AdminController {
         model.addAttribute(image);
 
         productDao.save(new Product(title, desc, price, quantity, image));
-        return "create";
+        return "admin";
     }
-/*
-    @PostMapping("admin/products/delete")
-    public String deleteProduct() {
+    @PostMapping("/admin/delete")
+    public String deleteProduct(@RequestParam long id ,Model model) {
+        productDao.deleteById(id);
         return "admin";
     }
 
-    @PostMapping("admin/products/pricing")
+/*    @PostMapping("admin/pricing")
     public String editPricing() {
         return "admin";
-    }
+    }*/
+/*    @PostMapping("/admin/quantity")
+    public String editQuantity() {
+        return "admin";
+    }*/
 
     @PostMapping("admin/create/admin")
     public String postAdmin() {
         return "admin";
-    }*/
+    }
 }

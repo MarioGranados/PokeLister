@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Create Add</title>
+</head>
+<body>
+
+
+<form th:action="@{/admin/create}" method="post">
+    <div th:fragment="create">
+        <div class="form-group">
+            <label for="title">title</label>
+            <input type="text" class="form-control" id="title" placeholder="title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="description">Another label</label>
+            <textarea class="form-control" id="description" placeholder="description" name="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">price</label>
+            <input type="number" class="form-control" id="price" placeholder="price" name="price">
+        </div>
+        <div class="form-group">
+            <label for="quantity">quantity</label>
+            <input type="number" class="form-control" id="quantity" placeholder="quantity" name="quantity">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Product</button>
+    </div>
+</form>
+
+
+<section th:replace="partials/script_lib :: script_lib"></section>
+</body>
+</html>
