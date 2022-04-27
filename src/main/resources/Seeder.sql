@@ -22,13 +22,32 @@ VALUES ('Most basic form of PokeBall used to catch pokemon',
         'Hyper-Potion', 1200, 50),
        ('Revives fainted Pokemon',
         'https://archives.bulbagarden.net/media/upload/8/8c/Dream_Revive_Sprite.png',
-        'Revive', 1500, 50);
+        'Revive', 1500, 50),
+       ('Cures all Pokemon',
+        'https://archives.bulbagarden.net/media/upload/4/42/Dream_Antidote_Sprite.png',
+        'Antitode', 200, 50),
+       ('Cures all Pokemon',
+        'https://archives.bulbagarden.net/media/upload/2/2a/Dream_Paralyze_Heal_Sprite.png',
+        'Paralyze Heal', 300, 50),
+       ('Can be used to wake pokemon from sleep',
+        'https://archives.bulbagarden.net/media/upload/7/7b/Dream_Awakening_Sprite.png',
+        'Awakening', 250, 50),
+       ('Used to treat pokemon burns',
+        'https://archives.bulbagarden.net/media/upload/f/f4/Dream_Burn_Heal_Sprite.png',
+        'Burn Heal', 200, 40),
+       ('Used to thaw frozen pokemon',
+        'https://archives.bulbagarden.net/media/upload/2/2a/Dream_Ice_Heal_Sprite.png',
+        'Ice Heal', 150, 30),
+       ('Cures all effects on pokemon',
+        'https://archives.bulbagarden.net/media/upload/0/07/Dream_Full_Heal_Sprite.png',
+        'Full Heal', 400, 20);
+
 
 
 
 
 INSERT INTO catagories (catagory_name)
 VALUES ('PokeBalls'),
-  ('Potions'),
-  ('Berries');
+    ('Potions'),
+    ('Berries');
 

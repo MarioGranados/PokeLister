@@ -8,8 +8,8 @@
 <div th:fragment="category" class="container">
     <div th:each="category : ${categories}">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" th:value="${category.checked_id}" id="category_id" name="${category.id}">
-            <label class="form-check-label" for="category_id" th:text="${category.name}">
+            <input class="form-check-input" type="checkbox" th:value="${category.id}" id="category_id" name="${category.id}">
+            <label class="form-check-label" for="category_id" th:text="${category.catagoryName}">
             </label>
         </div>
     </div>

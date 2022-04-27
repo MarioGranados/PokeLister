@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" href="partials/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <meta charset="UTF-8">
+    <link media="all" th:href="@{/styles/style.css}" rel="stylesheet">
     <title>Hero</title>
 </head>
-<body>
+<body class="primary_bg">
 <!--navbar-->
 <nav th:replace="partials/navbar :: navbar"></nav>
 <!--banner-->
 <div th:include="banner :: banner"></div>
 
-<div th:include="hero"></div>
-
 <!--body-->
 <div class="container">
-    <div th:include="products :: cards"></div>
+    <div th:include="partials/sidescroll :: scroller"></div>
 </div>
 
+<div th:include="hero"></div>
+
+<!--featured-->
+<div class="container">
+    <div th:include="partials/sidescroll :: scroller"></div>
+</div>
 
 <!--foooter-->
 <footer th:replace="partials/footer :: footer"></footer>
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

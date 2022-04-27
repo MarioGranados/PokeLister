@@ -2,7 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -10,7 +9,7 @@
 </head>
 <body>
 
-<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark secondary_bg">
     <a class="navbar-brand" href="/">
         <img src="https://www.downloadclipart.net/large/pokeball-transparent-png.png"
              alt="pokeball_logo" class="nav_logo">
@@ -22,11 +21,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link">Home <span class="sr-only">(current)</span></a>
             </li>
-
         </ul>
-
     </div>
     <div class="nav-item" th:if="${user == null}">
         <a class="nav-link" href="/login">Login</a>
@@ -44,7 +41,9 @@
     <a class="nav-item ">
         <a class="nav-link" href="/cart">
             <i class="bi bi-cart4" style="font-size: 1.2rem">
-                <span class="lead">Cart</span>
+                <span class="lead">
+                    Cart<span class="badge badge-primary" th:text="${carts}"></span>
+                </span>
             </i>
         </a>
     </a>

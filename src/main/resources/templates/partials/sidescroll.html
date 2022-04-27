@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /*this code was modified from the original source https://codepen.io/adityajanuardi/pen/YzydaVj*/
+        .scroll-container{
+            overflow: auto;
+            white-space: nowrap;
+            padding: 30px 20px 20px 70px;
+            background: transparent;
+            border-radius:15px;
+        }
+
+        .gridscroll{
+            display:inline-block;
+            width: 400vh;
+        }
+
+        .gridscroll img {
+            margin-right: 50px;
+            transition: 250ms;
+        }
+
+        .scroll-container .card {
+            white-space: normal;
+            transition: 300ms;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+
+<div th:fragment="scroller">
+    <h3 class='text-center display-4'>Products</h3>
+    <div class="scroll-container">
+        <div class="gridscroll">
+            <div class="card-deck">
+                <div th:replace="products :: cards"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h2>Horizontal Scrollable Menu</h2>
+<p>Resize the browser window to see the effect.</p>
+
+</body>
+</html>

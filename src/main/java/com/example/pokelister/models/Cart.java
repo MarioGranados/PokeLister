@@ -20,7 +20,7 @@ public class Cart {
 
     public Cart(){}
 
-    public Cart(long user_id, long product_id) {
+    public Cart(long user_id) {
         this.user_id = user_id;
     }
 
