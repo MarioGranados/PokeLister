@@ -15,12 +15,9 @@ public class Cart {
     @OneToOne
     private Product product;
 
-    @OneToOne
-    private CustomerInfo customerInfo;
-
     public Cart(){}
 
-    public Cart(long user_id) {
+    public Cart(long user_id, long cart_id) {
         this.user_id = user_id;
     }
 

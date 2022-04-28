@@ -43,9 +43,6 @@ VALUES ('Most basic form of PokeBall used to catch pokemon',
         'Full Heal', 400, 20);
 
 
-
-
-
 INSERT INTO catagories (catagory_name)
 VALUES ('PokeBalls'),
     ('Potions'),

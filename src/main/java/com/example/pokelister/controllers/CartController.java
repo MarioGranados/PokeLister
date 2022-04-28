@@ -37,11 +37,10 @@ public class CartController {
 
     @PostMapping("/cart/addtocart")
     public String addToCart(@RequestParam(name = "add_id") long id, Model model) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Product product = productDao.getById(id);
-        model.addAttribute("carts", counter);
-        counter++;
-        cartDao.save(new Cart(product.getId()));
-        return "index";
+        cartDao.save(new Cart( user.getId(), product.getId()));
+        return "redirect:/";
     }
 
     @GetMapping("/cart/checkout")
