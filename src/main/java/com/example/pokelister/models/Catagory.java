@@ -14,9 +14,6 @@ public class Catagory {
     @Column
     private String catagoryName;
 
-    @OneToOne
-    private Product product;
-
     public Catagory() {}
 
     public Catagory(String catagoryName) {this.catagoryName = catagoryName;}

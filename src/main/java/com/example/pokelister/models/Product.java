@@ -24,6 +24,9 @@ public class Product {
     @Column(nullable = true)
     private String image;
 
+    @OneToOne
+    private Catagory catagory;
+
     public Product(){
     }
 

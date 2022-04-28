@@ -11,20 +11,12 @@
 <div th:fragment="hero" class="jumbotron jumbotron-fluid bg_still_image">
     <div class="container secondary_bg py-5">
         <div class="row py-1 ">
-            <div class="col">
-                <button class="btn btn-primary">category</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary">category</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary">category</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary">category</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary">category</button>
+            <div th:each="category : ${categories}">
+                <div class="col">
+                    <form action="/category" method="post">
+                        <button class="btn btn-primary" th:text="${category.catagoryName}" type="submit" th:value="${category.id}" value="category_id"></button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -46,5 +46,6 @@ VALUES ('Most basic form of PokeBall used to catch pokemon',
 INSERT INTO catagories (catagory_name)
 VALUES ('PokeBalls'),
     ('Potions'),
-    ('Berries');
+    ('Berries'),
+    ('Antidotes');
 
