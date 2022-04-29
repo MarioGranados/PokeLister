@@ -17,7 +17,12 @@ public class Cart {
 
     public Cart(){}
 
-    public Cart(long user_id, long cart_id) {
+    public Cart(long user_id, Product product) {
+        this.product = product;
+        this.user_id = user_id;
+    }
+
+    public Cart(long user_id) {
         this.user_id = user_id;
     }
 
@@ -36,5 +41,13 @@ public class Cart {
 
     public void setUser_id(long user_id) {
         this.user_id = user_id;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

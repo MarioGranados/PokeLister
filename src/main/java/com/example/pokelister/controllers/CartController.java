@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class CartController {
     private CartRepository cartDao;
@@ -25,21 +27,18 @@ public class CartController {
 
     @GetMapping("/cart")
     public String showCart(Model model) {
-        model.addAttribute("products", productDao.findAll());
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("cart", cartDao.findAll());
-        if (user == null) {
-            return "index";
-        } else {
-            return "index";
-        }
+        Cart cart = (Cart) cartDao.findAll();
+        Product product = (Product) productDao.findAll();
+        model.addAttribute("products", product);
+        return "index";
     }
 
     @PostMapping("/cart/addtocart")
     public String addToCart(@RequestParam(name = "add_id") long id, Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Product product = productDao.getById(id);
-        cartDao.save(new Cart( user.getId(), product.getId()));
+        cartDao.save(new Cart( user.getId(), product));
         return "redirect:/";
     }
 
