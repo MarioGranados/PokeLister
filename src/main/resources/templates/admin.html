@@ -27,7 +27,7 @@
     </div>
     <div class="col">
         <div class="container">
-            <div th:include="products :: cards">
+            <div th:include="partials/products :: cards">
                 <form th:action="@{admin/delete}" method="post">
                     <button class="btn">delete</button>
                 </form>

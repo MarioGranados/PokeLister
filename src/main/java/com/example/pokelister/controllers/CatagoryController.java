@@ -1,6 +1,5 @@
 package com.example.pokelister.controllers;
 
-import com.example.pokelister.models.Catagory;
 import com.example.pokelister.repositories.CatagoryRepository;
 import com.example.pokelister.repositories.ProductRepository;
 import org.springframework.stereotype.Controller;

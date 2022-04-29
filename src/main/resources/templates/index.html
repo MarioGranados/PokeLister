@@ -12,14 +12,14 @@
 <!--navbar-->
 <nav th:replace="partials/navbar :: navbar"></nav>
 <!--banner-->
-<div th:include="banner :: banner"></div>
+<div th:include="partials/banner :: banner"></div>
 
 <!--body-->
 <div class="container">
     <div th:include="partials/sidescroll :: scroller"></div>
 </div>
 
-<div th:include="hero"></div>
+<div th:include="partials/hero :: hero"></div>
 
 <!--featured-->
 <div class="container">
