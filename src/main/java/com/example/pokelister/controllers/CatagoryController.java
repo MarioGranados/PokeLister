@@ -23,12 +23,14 @@ public class CatagoryController {
 
     @GetMapping("/category")
     public String showCatagories(Model model) {
-        model.addAttribute( "categories" ,catagoryDao.findAll());
-        return "partials/categories";
+        model.addAttribute( "categories", catagoryDao.findAll());
+        return "results";
     }
     @PostMapping("/category")
     public String postCat(@RequestParam(name = "category_id") long id, Model model) {
-        model.addAttribute("products", prodDao.findAllById(Collections.singleton(id)));
-        return "index";
+        System.out.println("id");
+        System.out.println(id);
+        model.addAttribute("products", prodDao.findByCategoryId(id));
+        return "results";
     }
 }

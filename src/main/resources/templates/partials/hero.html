@@ -13,9 +13,9 @@
     <div class="container secondary_bg py-5">
         <div class="row py-1 ">
             <div th:each="category : ${categories}" class="col">
-                <form action="/category" method="post">
+                <form th:action="@{/category}" method="post">
                     <button class="btn btn-primary" th:text="${category.catagoryName}" type="submit"
-                            th:value="${category.id}" value="category_id"></button>
+                            th:value="${category.id}" name="category_id" id="category_id"></button>
                 </form>
             </div>
         </div>

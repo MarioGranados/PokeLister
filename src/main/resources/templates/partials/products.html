@@ -19,8 +19,8 @@
                         <div th:text="${product.name}">name</div>
                     </div>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p th:text="${product.description}">desc</p>
-                    <p th:text="${product.price}">price</p>
+                    <span th:text="${product.description}">desc</span>
+                    <p>$ <span th:text="${product.price}">price</span></p>
                     <p th:text="${product.quantity}">quantity</p>
                     <form th:action="@{/cart/addtocart}" method="post">
                         <button class="btn_bg btn btn-primary" type="submit" name="add_id" th:value="${product.id}">Add To Cart<i class="bi bi-cart-plus"></i></button>
