@@ -12,8 +12,8 @@
 <div th:fragment="cards">
     <div class="card-group">
         <div th:each="product : ${products}">
-            <div class="card primary_bg" style="width: 18rem;">
-                <div class="card-body primary_bg">
+            <div class="card" style="width: 18rem; height: 25rem;">
+                <div class="card-body white">
                     <img th:src="${product.image}" class="card-img-top" alt="image">
                     <div class="card-title">
                         <div th:text="${product.name}">name</div>

@@ -6,7 +6,9 @@
     --links : #52B2CF;
 }
 
-
+.white {
+    background-color: #FFF;
+}
 
 .bg_still_image {
     background-image: url("https://images.nintendolife.com/31ef06e50b40b/2171-58796-61f3f3f16b878.large.jpg");

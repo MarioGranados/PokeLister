@@ -28,8 +28,7 @@ public class CatagoryController {
     }
     @PostMapping("/category")
     public String postCat(@RequestParam(name = "category_id") long id, Model model) {
-        System.out.println("id");
-        System.out.println(id);
+        model.addAttribute("categories", catagoryDao.findAll());
         model.addAttribute("products", prodDao.findByCategoryId(id));
         return "results";
     }
